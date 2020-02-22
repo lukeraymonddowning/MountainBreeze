@@ -12,17 +12,13 @@ use Illuminate\View\Engines\EngineResolver;
 use Illuminate\View\Engines\CompilerEngine;
 use Illuminate\View\Compilers\BladeCompiler;
 
-function mountain_breeze_enqueue()
-{
+add_action('wp_enqueue_scripts', function () {
     wp_deregister_script('jquery');
     wp_enqueue_style('style', get_stylesheet_uri());
     wp_enqueue_script('app', get_stylesheet_directory_uri() . '/dist/app.js');
-}
+});
 
-add_action('wp_enqueue_scripts', 'mountain_breeze_enqueue');
-
-function mountain_breeze_load_blade_view($template)
-{
+add_filter('template_include', function ($template) {
     $templateName = wp_basename($template, '.php');
     if (getBladeViewFactory()->exists($templateName)) {
         $GLOBALS['template_name'] = $templateName;
@@ -30,28 +26,26 @@ function mountain_breeze_load_blade_view($template)
     }
 
     return $template;
-}
-
-add_filter('template_include', 'mountain_breeze_load_blade_view');
+});
 
 function getBladeViewFactory()
 {
     $filesystem = new Filesystem;
-    $eventDispatcher = new Dispatcher(new Container);
-
     $viewResolver = new EngineResolver;
-    $bladeCompiler = new BladeCompiler($filesystem, getCompiledTemplateDirectory());
 
-    $viewResolver->register('blade', function () use ($bladeCompiler) {
-        return new CompilerEngine($bladeCompiler);
+    $viewResolver->register('blade', function () use ($filesystem) {
+        return new CompilerEngine(new BladeCompiler($filesystem, getCompiledTemplateDirectory()));
     });
 
     $viewResolver->register('php', function () {
         return new PhpEngine;
     });
 
-    $viewFinder = new FileViewFinder($filesystem, getTemplateDirectory());
-    return new Factory($viewResolver, $viewFinder, $eventDispatcher);
+    return new Factory(
+        $viewResolver,
+        new FileViewFinder($filesystem, getTemplateDirectory()),
+        new Dispatcher(new Container)
+    );
 }
 
 function getTemplateDirectory()
