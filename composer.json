@@ -10,6 +10,12 @@
         }
     ],
     "require": {
-        "tightenco/collect": "^6.16"
+        "tightenco/collect": "^6.16",
+        "illuminate/view": "^5.5",
+        "illuminate/events": "^5.5",
+        "illuminate/filesystem": "^5.5"
+    },
+    "scripts": {
+        "post-install-cmd": "npm install"
     }
 }
