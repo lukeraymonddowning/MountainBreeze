@@ -1,0 +1,15 @@
+{
+    "name": "lukedowning/mountain-breeze",
+    "description": "A Wordpress theme implementing Tailwind CSS and Alpine JS, and removing jQuery once and for all.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Luke Downing",
+            "email": "lukeraymonddowning@gmail.com"
+        }
+    ],
+    "require": {
+        "tightenco/collect": "^6.16"
+    }
+}
