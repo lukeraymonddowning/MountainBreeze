@@ -1,0 +1,41 @@
+{
+  "name": "mountain-breeze",
+  "version": "1.0.0",
+  "description": "A Wordpress theme implementing Tailwind CSS and Alpine JS, and removing jQuery once and for all.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npm run development",
+    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "npm run development -- --watch",
+    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prod": "npm run production",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lukeraymonddowning/MountainBreeze.git#mountainbreeze"
+  },
+  "keywords": [
+    "wordpress",
+    "php",
+    "tailwindcss",
+    "alpinejs",
+    "jquery",
+    "theme"
+  ],
+  "author": "Luke Raymond Downing",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lukeraymonddowning/MountainBreeze/issues"
+  },
+  "homepage": "https://github.com/lukeraymonddowning/MountainBreeze/tree/mountainbreeze#readme",
+  "dependencies": {
+    "alpinejs": "^2.0.1",
+    "tailwindcss": "^1.2.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.0",
+    "laravel-mix": "^5.0.1",
+    "vue-template-compiler": "^2.6.11"
+  }
+}
