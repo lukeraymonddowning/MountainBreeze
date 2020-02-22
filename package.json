@@ -35,8 +35,10 @@
     "tailwindcss": "^1.2.0"
   },
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^2.0.6",
     "cross-env": "^7.0.0",
     "laravel-mix": "^5.0.1",
+    "purgecss": "^2.0.6",
     "vue-template-compiler": "^2.6.11"
   }
 }

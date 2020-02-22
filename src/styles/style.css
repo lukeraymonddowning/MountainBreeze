@@ -21,9 +21,12 @@ All credit goes to the authors of the respective packages for their amazing cont
 */
 
 /** Tailwind */
+/* purgecss start ignore */
 @tailwind base;
 @tailwind components;
+/* purgecss end ignore */
 @tailwind utilities;
+
 
 /** Build something amazing... */
 

@@ -21,13 +21,42 @@ add_action('wp_enqueue_scripts', function () {
 });
 
 add_filter('template_include', function ($template) {
-    $templateName = wp_basename($template, '.php');
+    $templateName = wp_basename(wp_basename($template, '.php'), '.blade');
     if (getBladeViewFactory()->exists($templateName)) {
         $GLOBALS['template_name'] = $templateName;
         $template = __DIR__ . '/../mountainbreeze/index.php';
     }
 
     return $template;
+});
+
+collect([
+    'index',
+    '404',
+    'archive',
+    'author',
+    'category',
+    'tag',
+    'taxonomy',
+    'date',
+    'embed',
+    'home',
+    'frontpage',
+    'privacypolicy',
+    'page',
+    'paged',
+    'search',
+    'single',
+    'singular',
+    'attachment'
+])->each(function($type) {
+    add_filter("{$type}_template_hierarchy", function($templates) {
+        return collect($templates)->map(function($template) {
+            $filename = wp_basename($template, '.php');
+            return ["templates/$filename.blade.php", $template];
+        })->flatten()
+          ->toArray();
+    });
 });
 
 function getBladeViewFactory()
