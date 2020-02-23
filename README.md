@@ -57,8 +57,24 @@ to use.
 
 All blade files are stored in the theme's 'templates' directory. Mountain Breeze can automatically detect
 which wordpress template file it should use and, if a matching blade file exists, will use that instead.
+You don't even have to include the corresponding template file (eg: page.php) in the root directory.
 
 We have already done this for you for the index.php file, which you can find at 'templates/index.blade.php'.
+
+But it gets even better. The Wordpress Loop is one of the most common patterns in Wordpress development.
+To help with this, Mountain Breeze includes a custom blade directive: ```@loop```. This allows you to 
+quickly implement the Wordpress loop in any template file. Here is an example:
+
+```
+<div>
+    @loop
+        <h3>{{ the_title(); }}</h3>
+        <p>{{ the_excerpt(); }}</p>
+    @endloop
+</div>
+```
+
+Pretty awesome, huh?
 
 For more details on using blade, check out the documentation at https://laravel.com/docs/6.x/blade
 
