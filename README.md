@@ -1,5 +1,5 @@
 # MountainBreeze
-A Wordpress theme starter template for the modern web developer.
+A Wordpress theme template for the modern web developer.
 
 # Features
 - [Tailwind CSS](https://tailwindcss.com) baked in
