@@ -4,7 +4,7 @@ Text Domain: mountainbreeze
 Version: 1.0.0
 Requires at least: 4.7
 Requires PHP: 5.2.4
-Description: Our default theme for 2020 is designed to take full advantage of the flexibility of the block editor. Organizations and businesses have the ability to create dynamic landing pages with endless layouts using the group and column blocks. The centered content column and fine-tuned typography also makes it perfect for traditional blogs. Complete editor styles give you a good idea of what your content will look like, even before you publish. You can give your site a personal touch by changing the background colors and the accent color in the Customizer. The colors of all elements on your site are automatically calculated based on the colors you pick, ensuring a high, accessible color contrast for your visitors.
+Description: A theme for the modern Wordpress developer
 Tags: tailwindcss alpinejs modern framework webpack custom starter
 Author: Luke Downing
 Author URI: https://github.com/lukeraymonddowning/
@@ -12,23 +12,18 @@ Theme URI: https://github.com/lukeraymonddowning/MountainBreeze
 License: MIT
 License URI: https://opensource.org/licenses/MIT
 
-This theme replaces old, worn out libraries like jQuery & Bootstrap with modern, small and powerful ones like
-Tailwind CSS and Alpine JS. It also bundles in Laravel Mix for easy webpack management.
+This theme replaces old, worn out libraries like jQuery & Bootstrap
+with modern, small and powerful ones like Tailwind CSS and Alpine
+JS. It also bundles in Laravel Mix for easy webpack management.
 
 It is designed as a base to build your custom themes from, and not as a standalone theme itself.
 
 All credit goes to the authors of the respective packages for their amazing contributions to open source.
 */
 
-/** Tailwind */
-/* purgecss start ignore */
 @tailwind base;
 @tailwind components;
-/* purgecss end ignore */
 @tailwind utilities;
-
-
-/** Build something amazing... */
 
 .bg-example {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='152' height='152' viewBox='0 0 152 152'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='temple' fill='%239C92AC' fill-opacity='0.4'%3E%3Cpath d='M152 150v2H0v-2h28v-8H8v-20H0v-2h8V80h42v20h20v42H30v8h90v-8H80v-42h20V80h42v40h8V30h-8v40h-42V50H80V8h40V0h2v8h20v20h8V0h2v150zm-2 0v-28h-8v20h-20v8h28zM82 30v18h18V30H82zm20 18h20v20h18V30h-20V10H82v18h20v20zm0 2v18h18V50h-18zm20-22h18V10h-18v18zm-54 92v-18H50v18h18zm-20-18H28V82H10v38h20v20h38v-18H48v-20zm0-2V82H30v18h18zm-20 22H10v18h18v-18zm54 0v18h38v-20h20V82h-18v20h-20v20H82zm18-20H82v18h18v-18zm2-2h18V82h-18v18zm20 40v-18h18v18h-18zM30 0h-2v8H8v20H0v2h8v40h42V50h20V8H30V0zm20 48h18V30H50v18zm18-20H48v20H28v20H10V30h20V10h38v18zM30 50h18v18H30V50zm-2-40H10v18h18V10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");

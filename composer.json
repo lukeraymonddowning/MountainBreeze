@@ -10,9 +10,9 @@
         }
     ],
     "require": {
-        "illuminate/view": "^5.5",
-        "illuminate/events": "^5.5",
-        "illuminate/filesystem": "^5.5"
+        "illuminate/view": "^8.0",
+        "illuminate/events": "^8.0",
+        "illuminate/filesystem": "^8.0"
     },
     "scripts": {
         "post-install-cmd": "npm install"

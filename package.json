@@ -4,12 +4,12 @@
   "description": "A Wordpress theme implementing Tailwind CSS and Alpine JS, and removing jQuery once and for all.",
   "main": "index.js",
   "scripts": {
+    "development": "mix",
     "dev": "npm run development",
-    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "watch": "npm run development -- --watch",
-    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "prod": "npm run production",
-    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "mix watch",
+    "watch-poll": "mix watch -- --watch-options-poll=1000",
+    "hot": "mix watch --hot",
+    "production": "mix --production",
     "postinstall": "npm run dev"
   },
   "repository": {
@@ -31,14 +31,11 @@
   },
   "homepage": "https://github.com/lukeraymonddowning/MountainBreeze/tree/mountainbreeze#readme",
   "dependencies": {
-    "alpinejs": "^2.0.1",
-    "tailwindcss": "^1.2.0"
+    "alpinejs": "^2.0",
+    "tailwindcss": "^2.0"
   },
   "devDependencies": {
-    "@fullhuman/postcss-purgecss": "^2.0.6",
     "cross-env": "^7.0.0",
-    "laravel-mix": "^5.0.1",
-    "purgecss": "^2.0.6",
-    "vue-template-compiler": "^2.6.11"
+    "laravel-mix": "^6.0"
   }
 }
