@@ -90,6 +90,10 @@ you can check out our example index file in 'templates/index.blade.php' to see i
 If you would like to customise Tailwind, you can edit the included tailwind.config.js file.
 Available options can be found at https://tailwindcss.com/docs/configuration
 
+By default, we purge all `.blade.php` files in the `template` directory. If you have other files
+that include Tailwind classes, you need to add them to the purge array in the tailwind config
+file.
+
 # Using Alpine
 Alpine is baked right into Mountain Breeze, and you can start using it right away. In fact,
 you can check out our example index file in 'templates/index.blade.php' to see it in use.
