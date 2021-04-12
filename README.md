@@ -16,10 +16,15 @@ Requirements:
 - Composer
 - NPM
 
-Clone, fork or download the repository to your Wordpress 'wp-content/themes' directory. 
-Then, from the theme directory, run ```$ composer install``` from the terminal or command prompt.
+From the `wp-content/themes` directory of your Wordpress development environment, run 
 
-The theme will automatically run ```$ npm install``` for you an even build the needed stylesheets for you.
+```bash
+composer create-project lukeraymonddowning/mountain-breeze
+```
+
+If you want to do things manually, clone, fork or download the repository to your Wordpress 'wp-content/themes' directory.
+
+Then, from the theme directory, run ```$ composer install``` from the terminal or command prompt. The theme will automatically run ```$ npm install``` for you and even build the needed stylesheets for you.
 
 # Our motivation
 Wordpress powers over 1/3rd of the internet, which is just insane when you think about it. Whilst it
